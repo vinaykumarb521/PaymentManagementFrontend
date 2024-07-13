@@ -14,7 +14,7 @@ const Login = () => {
     e.preventDefault();
     try {
         const response = await axios.get(`http://localhost:9090/vendors/getAllVendors?adminName=${localStorage.getItem("adminName")}`);
-      alert( response.data);
+      alert( credentials.username + " login successful");
       login(credentials.username); 
       localStorage.setItem("adminName", credentials.username);
       setError('');

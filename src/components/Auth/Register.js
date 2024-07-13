@@ -13,6 +13,8 @@ const Register = () => {
         e.preventDefault();
         try {
             const response = await axios.post('http://localhost:9090/auth/register', userData);
+            alert( credentials.username + " registration successful");
+
             login(userData.username); // Assuming the API returns username upon successful registration
             setError('');
             navigate('/employees'); // Redirect to /employees after successful registration
