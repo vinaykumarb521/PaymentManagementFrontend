@@ -31,8 +31,8 @@ function EmployeesForm() {
       await axios.post('http://localhost:9090/employees/create', employeeData);
       alert('Employee added successfully');
       setEmployeeData({ name: '', designation: '', ctc: '', email: '',createdBy: ''  });
-      fetchEmployees(); // Refresh employees after adding a new one
-      setShowForm(false); // Hide the form after successful submission
+      fetchEmployees(); 
+      setShowForm(false);
     } catch (error) {
       console.error('Error adding employee:', error);
       alert('Failed to add employee');

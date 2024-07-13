@@ -18,7 +18,7 @@ const Login = () => {
       login(credentials.username); 
       localStorage.setItem("adminName", credentials.username);
       setError('');
-      navigate('/'); // Redirect to root path upon successful login
+      navigate('/'); 
     } catch (error) {
       console.error('Error logging in:', error);
       setError('Invalid credentials');

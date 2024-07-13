@@ -8,20 +8,20 @@ const EmailForm = () => {
     const [loading, setLoading] = useState(false);
     const [confirmBulkEmail, setConfirmBulkEmail] = useState(false);
     const [agentName, setAgentName] = useState(false);
-    // Fetch vendors from backend when component mounts
+
     useEffect(() => {
         const fetchVendors = async () => {
             try {
                 setAgentName(localStorage.getItem("adminName"))
                 const response = await axios.get(`http://localhost:9090/vendors/getAllVendors?adminName=${agentName}`);
-                setVendors(response.data); // Assuming response.data is an array of vendors
+                setVendors(response.data); 
             } catch (error) {
                 console.error('Error fetching vendors:', error);
             }
         };
 
         fetchVendors();
-    }, []); // Empty dependency array ensures useEffect runs only once
+    }, []); 
 
     const handleSendBulkEmail = async () => {
         setLoading(true);
@@ -33,7 +33,7 @@ const EmailForm = () => {
             alert('Failed to send bulk emails');
         } finally {
             setLoading(false);
-            setConfirmBulkEmail(false); // Close confirmation dialog
+            setConfirmBulkEmail(false); 
         }
     };
 
@@ -105,7 +105,6 @@ const EmailForm = () => {
                     Send Bulk Email
                 </button>
 
-                {/* Confirmation Dialog for Bulk Email */}
                 {confirmBulkEmail && (
                     <div style={{ marginTop: '1rem' }}>
                         <p>Are you sure you want to send emails to selected vendors?</p>

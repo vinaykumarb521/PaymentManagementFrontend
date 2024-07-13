@@ -16,7 +16,7 @@ const VendorForm = () => {
       setLoading(true);
 try {
   const response = await axios.get(`http://localhost:9090/vendors/getAllVendors?adminName=${localStorage.getItem("adminName")}`);
-  console.log(response.data); // Assuming response.data contains the vendors data
+  console.log(response.data); 
 } catch (error) {
   console.error('Error fetching vendors:', error);
 }
@@ -40,8 +40,8 @@ try {
       await axios.post('http://localhost:9090/vendors/create', vendorData);
       alert('Vendor added successfully');
       setVendorData({ name: '', upi: '', email: '',vendorData:'' });
-      fetchVendors(); // Refresh vendors after adding a new one
-      setShowForm(false); // Hide the form after successful submission
+      fetchVendors(); 
+      setShowForm(false); 
     } catch (error) {
       console.error('Error adding vendor:', error);
       alert('Failed to add vendor');

@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import { useAuth } from './AuthProvider'; // Adjust the import path accordingly
+import { useAuth } from './AuthProvider'; 
 
 const Register = () => {
     const [userData, setUserData] = useState({ username: '', password: '', name: '' });
     const [error, setError] = useState('');
     const { login } = useAuth();
-    const navigate = useNavigate(); // Use navigate hook
+    const navigate = useNavigate(); 
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -15,9 +15,9 @@ const Register = () => {
             const response = await axios.post('http://localhost:9090/auth/register', userData);
             alert( credentials.username + " registration successful");
 
-            login(userData.username); // Assuming the API returns username upon successful registration
+            login(userData.username); 
             setError('');
-            navigate('/employees'); // Redirect to /employees after successful registration
+            navigate('/employees'); 
         } catch (error) {
             console.error('Error registering:', error);
             setError('Registration failed');

@@ -19,13 +19,13 @@ export const AuthProvider = ({ children }) => {
   const login = (username) => {
     setAdminName(username);
     setIsAuthenticated(true);
-    localStorage.setItem('adminName', username); // Store adminName in localStorage
+    localStorage.setItem('adminName', username);
   };
 
   const logout = () => {
     setAdminName('');
     setIsAuthenticated(false);
-    localStorage.removeItem('adminName'); // Remove adminName from localStorage on logout
+    localStorage.removeItem('adminName'); 
   };
 
   return (
