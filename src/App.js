@@ -5,8 +5,8 @@ import { AppBar, Toolbar, Typography, Container, CssBaseline } from '@mui/materi
 import { styled } from '@mui/system';
 import EmployeesForm from './components/Forms/EmployeesForm';
 import VendorForm from './components/Forms/VendorForm';
-import EmailForm from './components/Forms/EmailForm';
-import EmailLog from './components/Forms/EmailLog';
+import EmailForm from './components/Email/EmailForm';
+import EmailLog from './components/Email/EmailLog';
 import Register from './components/Auth/Register';
 import Login from './components/Auth/Login';
 import { AuthProvider, useAuth } from './components/Auth/AuthProvider'; // Ensure correct path

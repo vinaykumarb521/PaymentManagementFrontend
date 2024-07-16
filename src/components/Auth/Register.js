@@ -13,7 +13,8 @@ const Register = () => {
         e.preventDefault();
         try {
             const response = await axios.post('http://localhost:9090/auth/register', userData);
-                  alert( userData.username + " successful");
+            console.log(response)
+                  alert( "Registration successful");
 
             login(userData.username); // Assuming the API returns username upon successful registration
             setError('');

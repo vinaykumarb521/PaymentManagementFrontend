@@ -1,4 +1,3 @@
-// AuthProvider.js
 import { createContext, useContext, useEffect, useState } from 'react';
 
 const AuthContext = createContext();
@@ -8,7 +7,6 @@ export const AuthProvider = ({ children }) => {
   const [adminName, setAdminName] = useState('');
 
   useEffect(() => {
-    // Check localStorage on initial load
     const storedAdminName = localStorage.getItem('adminName');
     if (storedAdminName) {
       setAdminName(storedAdminName);

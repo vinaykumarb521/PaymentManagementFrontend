@@ -13,8 +13,10 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+     
+      const res = await axios.post('http://localhost:9090/auth/login', credentials);
+      alert('Login successful');
         const response = await axios.get(`http://localhost:9090/vendors/getAllVendors?adminName=${localStorage.getItem("adminName")}`);
-      alert( credentials.username + " login successful");
       login(credentials.username); 
       localStorage.setItem("adminName", credentials.username);
       setError('');
